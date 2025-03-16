@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DarkModeService } from './core/data-access/darkmode.service';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: '<router-outlet />',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'stayplace';
+  darkModeService = inject(DarkModeService);
+
+  darkModeOn = computed(() => this.darkModeService.darkModeOn());
+  toggleDarkMode() {
+    this.darkModeService.toggleDarkMode();
+  }
+
+  ngOnInit() {
+    if (this.darkModeOn()) {
+      this.toggleDarkMode();
+    }
+  }
 }
