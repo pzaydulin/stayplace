@@ -1,0 +1,14 @@
+<google-map class="google-map" [options]="options" *ngIf="apiLoaded$ | async" (mapClick)="onMapClick()">
+  <map-marker
+    automation-id="google-map-marker"
+    #mapMarker="mapMarker"
+    *ngFor="let marker of markers"
+    [position]="marker"
+    [label]="marker?.label || ''"
+    [options]="markerOptions"
+    (mapClick)="onMarkerClick(marker, mapMarker)"
+  ></map-marker>
+  <map-info-window automation-id="google-map-info-window" (closeclick)="onInfoWindowClosed()">
+    <ng-content></ng-content>
+  </map-info-window>
+</google-map>

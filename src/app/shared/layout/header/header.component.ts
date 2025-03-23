@@ -12,6 +12,7 @@ import { DarkModeService } from '../../../core/data-access/darkmode.service';
   selector: 'app-header',
   imports: [ToolbarModule, ButtonModule],
   templateUrl: './header.component.html',
+  styles: ' :host { --p-toolbar-padding: 0.5rem; }',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {

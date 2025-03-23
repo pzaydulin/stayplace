@@ -1,7 +1,7 @@
 <p-toolbar styleClass="bg-background border-0 rounded-none">
   <ng-template pTemplate="start">
     <svg
-      class="h-[60px] w-[80px] p-3 text-primary"
+      class="h-[64px] w-[84px] p-3 text-primary"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentcolor"
       viewBox="0 0 512.183 512.183"
@@ -17,26 +17,26 @@
   </ng-template>
   <ng-template pTemplate="end">
     <p-button
-      icon="pi pi-home text-primary text-xl"
+      icon="pi pi-home text-primary text-2xl"
       styleClass="!px-3 !py-1"
       severity="secondary"
       text
     />
     <p-button
-      icon="pi pi-{{ darkModeOn() ? 'moon' : 'sun' }} text-xl text-primary"
+      icon="pi pi-{{ darkModeOn() ? 'moon' : 'sun' }} text-2xl text-primary"
       styleClass="!px-3 !py-1"
       severity="secondary"
       (onClick)="toggleDarkMode()"
       text
     />
     <p-button
-      icon="pi pi-cog text-xl text-primary"
+      icon="pi pi-cog text-2xl text-primary"
       styleClass="!px-3 !py-1"
       severity="secondary"
       text
     />
     <p-button
-      icon="pi pi-question-circle text-xl text-primary"
+      icon="pi pi-question-circle text-2xl text-primary"
       styleClass="!px-3 !py-1 !mr-3"
       severity="secondary"
       text
