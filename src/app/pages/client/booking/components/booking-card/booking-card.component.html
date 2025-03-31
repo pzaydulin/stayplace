@@ -1,0 +1,16 @@
+<div *ngIf="bookingVariant$ | async as bookingVariant">
+  <div>
+    <p-galleria
+      [value]="bookingVariant | bookingVariantImages"
+      [circular]="true"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+      [containerStyle]="{ 'max-width': '210px', 'min-width': '80px' }"
+    >
+      <ng-template #item let-item>
+        <img [src]="item" style="width: 100%; display: block" />
+      </ng-template>
+    </p-galleria>
+  </div>
+  <p automation-id="booking-card-description">{{ bookingVariant.address }}</p>
+</div>

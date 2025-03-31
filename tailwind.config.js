@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
   darkMode: ["selector", '[class="dark-mode"]'],
   content: ["./src/**/*.{html,ts}"],
   theme: {
@@ -27,7 +30,7 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        radius: "hsl(var(--radius))" ,     
+        radius: "hsl(var(--radius))",
       },
     },
   },

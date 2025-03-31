@@ -1,7 +1,7 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { RoomActions } from './room.actions';
-import { Room, RoomEntity } from '@app/models/room.interface';
+import { RoomEntity } from '@app/models/room.interface';
 
 export const ROOM_FEATURE_KEY = 'rooms';
 

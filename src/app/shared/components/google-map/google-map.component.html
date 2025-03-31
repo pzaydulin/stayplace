@@ -1,14 +1,15 @@
-<google-map class="google-map" [options]="options" *ngIf="apiLoaded$ | async" (mapClick)="onMapClick()">
-  <map-marker
-    automation-id="google-map-marker"
-    #mapMarker="mapMarker"
+<google-map class="google-map" [options]="options" *ngIf="apiLoaded$ | async" (gmpClick)="onMapClick()">
+  <map-advanced-marker
+    #markerElem="mapAdvancedMarker"
     *ngFor="let marker of markers"
-    [position]="marker"
-    [label]="marker?.label || ''"
-    [options]="markerOptions"
-    (mapClick)="onMarkerClick(marker, mapMarker)"
-  ></map-marker>
-  <map-info-window automation-id="google-map-info-window" (closeclick)="onInfoWindowClosed()">
+    [position]="{lat: marker.position.lat, lng: marker.position.lng}"
+    [content]="marker?.content || null"
+    (gmpClick)="onMarkerClick(marker, markerElem)"
+  ></map-advanced-marker>
+  <map-info-window (closeclick)="onInfoWindowClosed()">
     <ng-content></ng-content>
   </map-info-window>
-</google-map>
+</google-map> 
+
+
+

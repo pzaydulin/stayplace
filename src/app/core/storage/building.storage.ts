@@ -49,7 +49,9 @@ export function castBuildingDto<T extends BuildingEntity = BuildingEntity>({
   };
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BuildingStorage {
   constructor(private readonly localStorage: LocalStorage) {}
 

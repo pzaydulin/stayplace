@@ -1,5 +1,4 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { Update } from '@ngrx/entity';
 
 import { Entity } from '@app/models/entity.interface';
 import { Building, BuildingEntity, ChangeBuildingRoom, ChangedBuilding, ChangedBuildingRoom, NewBuilding } from '@app/models/building.interface';

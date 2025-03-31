@@ -1,0 +1,53 @@
+
+:host {
+  ::ng-deep .google-map-marker {
+    color: black;
+    padding: 0.3rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    min-width: 4rem;
+
+    &:before {
+      content: '$';
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  ::ng-deep .gm-style .gm-style-iw-c {
+    padding: 1.1rem;
+    max-width: 14rem !important;
+  }
+
+}
+.google-map {
+  display: block;
+  height: 100%;
+
+  ::ng-deep .map-container {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    width: 100% !important;
+  }
+}
+
+/* HTML marker styles */
+::ng-deep .price-tag {
+  @apply before:content-['$'] bg-blue-500 text-white border-0 rounded-lg text-sm px-4 py-2 relative;
+}
+
+::ng-deep .price-tag::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #3b82f6; /* Tailwind blue-500 */
+}

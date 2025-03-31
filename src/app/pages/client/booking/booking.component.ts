@@ -1,25 +1,37 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Room } from '@app/models/room.interface';
-import { RoomFacade } from '@app/store/room.facade';
-import { Observable } from 'rxjs';
-import { RoomService } from 'src/app/core/data-access/room.service';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import {
+  BreakpointObserver,
+  Breakpoints,
+} from '@angular/cdk/layout';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { BookingListComponent } from "./components/booking-list/booking-list.component";
+import { BookingMapComponent } from "./components/booking-map/booking-map.component";
+import { BookingCardComponent } from "./components/booking-card/booking-card.component";
 
 @Component({
   selector: 'app-booking',
-  imports: [CommonModule],
+  imports: [CommonModule, BookingListComponent, BookingMapComponent, BookingCardComponent],
   templateUrl: './booking.component.html',
   styleUrl: './booking.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookingComponent {
-  private readonly roomFacade: RoomFacade = inject(RoomFacade);
-  private readonly roomService: RoomService = inject(RoomService);
+  private readonly breakpointObserver: BreakpointObserver = inject(BreakpointObserver);
 
-  rooms$!: Observable<Room[]>;
+  private readonly destroyRef = inject(DestroyRef);
+
+  protected isMobileScreen = signal(false);
+
   ngOnInit(): void {
-    // this.roomFacade.load();
-
-    this.rooms$ = this.roomService.rooms$;
+    // Observe the screen size and set isMobileScreen accordingly
+    // This will set isMobileScreen to true if the screen size is less than or equal to 600px
+    this.breakpointObserver
+      .observe([Breakpoints.HandsetPortrait])
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((result) => {
+        this.isMobileScreen.set(result.matches);
+      });
   }
+
 }

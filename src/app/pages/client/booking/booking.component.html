@@ -1,5 +1,12 @@
-<ng-container *ngIf="rooms$ | async as rooms; else loadingTpl">
-  <p *ngFor="let room of rooms">№ {{ room.id }}, guests {{ room.guests }}</p>
-</ng-container>
+<ng-container *ngIf="isMobileScreen(); then tplMobile; else tplDesktop;"></ng-container>
 
-<ng-template #loadingTpl>Загрузка...</ng-template>
+<ng-template #tplDesktop>
+  <div class="flex">
+    <div class="flex-1"><app-booking-list></app-booking-list></div>
+    <div class="flex-1"><app-booking-map><app-booking-card /></app-booking-map></div>
+  </div>
+</ng-template>
+
+<ng-template #tplMobile>
+  <div>Mobile</div>
+</ng-template>

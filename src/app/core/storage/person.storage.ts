@@ -48,7 +48,9 @@ export function castPersonDto<T extends PersonEntity = PersonEntity>({
   };
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class PersonStorage {
   constructor(private readonly localStorage: LocalStorage) {}
 

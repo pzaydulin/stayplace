@@ -1,5 +1,5 @@
-import { Building } from '@app/buildings/common';
-import { RoomEntity } from '@app/rooms/common';
+import { Building } from '@app/models/building.interface';
+import { RoomEntity } from '@app/models/room.interface';
 
 export interface BookingVariant extends Building {
   firstRoom: RoomEntity | null;

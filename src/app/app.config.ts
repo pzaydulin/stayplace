@@ -11,7 +11,7 @@ import { provideStore } from '@ngrx/store';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 import { RouterSerializer } from '@app/store/router.serializer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withJsonpSupport } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -43,6 +43,6 @@ export const appConfig: ApplicationConfig = {
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
       connectInZone: true, // If set to true, the connection is established within the Angular zone
     }),
-    provideHttpClient(),
+    provideHttpClient(withJsonpSupport()),
   ],
 };

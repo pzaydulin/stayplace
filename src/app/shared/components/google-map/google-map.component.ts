@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { GoogleMapsModule, MapAdvancedMarker, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Observable } from 'rxjs';
 
 import { MapMarkerConfig } from '@app/models/map.interface';
 import { GoogleMapsService } from '@app/data-access/map.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-google-map',
+  imports: [GoogleMapsModule, CommonModule],
   templateUrl: './google-map.component.html',
   styleUrls: ['./google-map.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,23 +17,22 @@ export class GoogleMapComponent implements OnInit {
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
 
   @Input() options!: google.maps.MapOptions;
-  @Input() markerOptions: google.maps.MarkerOptions = { draggable: false };
   @Input() markers: MapMarkerConfig[] = [];
 
   @Output() mapMarkerClicked = new EventEmitter<MapMarkerConfig>();
   @Output() mapInfoWindowClosed = new EventEmitter<void>();
 
-  apiLoaded$!: Observable<boolean>;
+  protected apiLoaded$!: Observable<boolean>;
 
   private markerClicked: MapMarkerConfig | null = null;
 
   constructor(private readonly googleMapsService: GoogleMapsService) {}
 
   ngOnInit(): void {
-    this.apiLoaded$ = this.googleMapsService.load();
+    this.apiLoaded$ = this.googleMapsService.loadGoogleMapsAPI();
   }
 
-  onMarkerClick(config: MapMarkerConfig, marker: MapMarker): void {
+  onMarkerClick(config: MapMarkerConfig, marker: MapAdvancedMarker): void {
     this.markerClicked = config;
     this.mapMarkerClicked.emit(config);
     this.infoWindow?.open(marker);
