@@ -1,6 +1,6 @@
 
-:host {
-  ::ng-deep .google-map-marker {
+:host ::ng-deep  {
+  .google-map-marker {
     color: black;
     padding: 0.3rem;
     background-color: white;
@@ -15,12 +15,26 @@
       transform: scale(1.1);
     }
   }
-
-  ::ng-deep .gm-style .gm-style-iw-c {
-    padding: 1.1rem;
-    max-width: 14rem !important;
+  .gm-style {
+    @apply text-black;
+  }
+  .gm-style .gm-style-iw-c {
+    padding: 1.2rem;
+    /* max-width: 400px !important; */
   }
 
+  .gm-ui-hover-effect span {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+  }
+  .gm-style-iw-chr {
+    height: 18px !important;
+  }
+  .gm-ui-hover-effect {
+    width: 20px !important;
+    height: 20px !important;
+  }  
 }
 .google-map {
   display: block;

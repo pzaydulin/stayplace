@@ -1,12 +1,28 @@
-<ng-container *ngIf="isMobileScreen(); then tplMobile; else tplDesktop;"></ng-container>
+<ng-container
+  *ngIf="isMobileScreen(); then tplMobile; else tplDesktop"
+></ng-container>
 
 <ng-template #tplDesktop>
   <div class="flex">
     <div class="flex-1"><app-booking-list></app-booking-list></div>
-    <div class="flex-1"><app-booking-map><app-booking-card /></app-booking-map></div>
+    <div class="flex-1">
+      <app-booking-map><app-booking-card /></app-booking-map>
+    </div>
   </div>
 </ng-template>
 
 <ng-template #tplMobile>
-  <div>Mobile</div>
+  <ng-container *ngIf="isMapShown; then tplMapMobile; else tplListMobile"></ng-container>
+  <div class="absolute bottom-4 m-auto z-10 right-0 left-0 justify-center flex">
+      <p-button styleClass="btn" *ngIf="!isMapShown" (click)="isMapShown = !isMapShown" icon="pi pi-map" [rounded]="true" severity="primary" />
+      <p-button styleClass="btn" *ngIf="isMapShown" (click)="isMapShown = !isMapShown" icon="pi pi-list" [rounded]="true" severity="primary" />
+  </div>
+</ng-template>
+
+<ng-template #tplMapMobile>
+  <app-booking-map></app-booking-map>
+</ng-template>
+
+<ng-template #tplListMobile>
+  <app-booking-list></app-booking-list>
 </ng-template>

@@ -4,9 +4,9 @@
     *ngFor="let marker of markers"
     [position]="{lat: marker.position.lat, lng: marker.position.lng}"
     [content]="marker?.content || null"
-    (gmpClick)="onMarkerClick(marker, markerElem)"
+    (mapClick)="onMarkerClick(marker, markerElem)"
   ></map-advanced-marker>
-  <map-info-window (closeclick)="onInfoWindowClosed()">
+  <map-info-window (closeclick)="onInfoWindowClosed()" [options]="infoWindowOptions">
     <ng-content></ng-content>
   </map-info-window>
 </google-map> 

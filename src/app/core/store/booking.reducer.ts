@@ -34,7 +34,7 @@ export const reducer = createReducer(
   }))
 );
 
-export const BookingFeature = createFeature({
+export const bookingFeature = createFeature({
   name: BOOKING_FEATURE_KEY,
   reducer,
 });

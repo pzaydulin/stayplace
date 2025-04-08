@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { bookingFeature } from '@app/store/booking.reducer';
 import { BuildingEffects } from '@app/store/building.effects';
 import { buildingFeature } from '@app/store/building.reducer';
 import { PersonEffects } from '@app/store/person.effects';
@@ -20,6 +21,7 @@ export const routes: Routes = [
       provideEffects(RoomEffects),
       provideEffects(BuildingEffects),
       provideEffects(PersonEffects),
+      provideState(bookingFeature),
     ],
   },
   {

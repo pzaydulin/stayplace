@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { GoogleMapsModule, MapAdvancedMarker, MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { GoogleMapsModule, MapAdvancedMarker, MapInfoWindow } from '@angular/google-maps';
 import { Observable } from 'rxjs';
 
 import { MapMarkerConfig } from '@app/models/map.interface';
@@ -33,10 +33,12 @@ export class GoogleMapComponent implements OnInit {
   }
 
   onMarkerClick(config: MapMarkerConfig, marker: MapAdvancedMarker): void {
+    console.log('Marker clicked:', config, marker);
     this.markerClicked = config;
     this.mapMarkerClicked.emit(config);
     this.infoWindow?.open(marker);
   }
+
 
   onMapClick(): void {
     if (this.markerClicked) {
@@ -52,5 +54,9 @@ export class GoogleMapComponent implements OnInit {
     this.markerClicked = null;
     this.infoWindow?.close();
     this.mapInfoWindowClosed.emit();
+  }
+
+  infoWindowOptions: google.maps.InfoWindowOptions = {
+    headerDisabled: false,
   }
 }
