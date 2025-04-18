@@ -1,4 +1,4 @@
-<div class="booking-list" *ngIf="bookingVariants$ | async as bookingVariants">
+<div *ngIf="bookingVariants$ | async as bookingVariants">
   <ng-container *ngIf="bookingVariants.length">
     <app-booking-portlet
       [bookingVariant]="bookingVariant"

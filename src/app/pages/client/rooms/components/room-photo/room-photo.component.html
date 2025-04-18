@@ -1,0 +1,33 @@
+<ng-container 
+  *ngIf="isMobileScreen(); then tplMobile; else tplDesktop"
+  ></ng-container>
+
+<ng-template #tplDesktop>
+    <div *ngIf="photos().length" class="grid grid-flow-col grid-rows-2 grid-cols-4 gap-2 mt-3  rounded-lg overflow-hidden">
+        <div class="row-span-2 col-span-2">
+            <img class="room-photo-source" [src]="photos()[0]" alt="" />
+        </div>
+        <div *ngFor="let photo of photos() | roomPreviewImages; let last=last">
+            <ng-container *ngTemplateOutlet="tplPhoto; context: { photo: photo, last: last }"></ng-container>
+        </div>
+    </div>
+
+</ng-template>
+
+<ng-template #tplMobile>
+  <p-carousel [value]="photos()" [numVisible]="1" [numScroll]="1" [showIndicators]="false" [showNavigators]="false">
+    <ng-template let-photo #item>
+      <div [ngStyle]="photo | backgroundImage" class="h-64 w-full mt-2 bg-cover top-0 left-0 rounded-lg overflow-hidden">
+        <!-- <img [src]="photo" class="w-full rounded-lg overflow-hidden" /> -->
+      </div>
+    </ng-template>
+  </p-carousel>  
+</ng-template>
+
+
+<ng-template #tplPhoto let-photo="photo" let-last="last">
+  <div class="room-photo-preview" [ngStyle]="photo | backgroundImage"></div>
+  <div class="relative" *ngIf="last">
+    <p-button label="Show All" styleClass="absolute text-xs right-1 bottom-2"  severity="secondary" icon="pi pi-images"  (click)="onShowAll()" />
+  </div>
+</ng-template>

@@ -4,12 +4,12 @@
       [value]="bookingVariant | bookingVariantImages"
       [circular]="true"
       [showItemNavigators]="true"
-      [showThumbnails]="false"
+      [showThumbnails]="false"  
     >
       <ng-template #item let-item>
         <img [src]="item" style="width: 100%; display: block" />
       </ng-template>
     </p-galleria>
   </div>
-  <p>{{ bookingVariant.address }}</p>
+  <p class="hover:cursor-pointer hover:text-primary" (click)="onSelected(bookingVariant)">{{ bookingVariant.address }}</p>
 </div>

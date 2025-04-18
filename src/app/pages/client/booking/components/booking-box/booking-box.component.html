@@ -3,5 +3,6 @@
     class="booking-image"
     [ngStyle]="bookingVariant | bookingVariantFirstImage | backgroundImage"
   ></div>
-  <p>{{ bookingVariant.address }}: {{ bookingVariant.firstRoom?.price }}</p>
+  <p>Address: {{ bookingVariant.address }}</p>
+  <p>Price: {{ bookingVariant.firstRoom?.price | currency }}</p>
 </div>

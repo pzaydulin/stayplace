@@ -22,9 +22,12 @@ export class BookingCardComponent implements OnInit {
     this.bookingVariant$ = this.bookingService.bookingVariant$;
   }
 
-  // onSelected(bookingVariant: BookingVariant): void {
-  //   if (bookingVariant.firstRoom?.id) {
+  onSelected(bookingVariant: BookingVariant): void {
+    if (bookingVariant.firstRoom?.id) {
+      console.log('Booking card variant clicked:', bookingVariant?.firstRoom?.id);
   //     this.navigationService.navigateByUrl(NavigationPath.RoomPage, { id: bookingVariant.firstRoom.id });
-  //   }
-  // }
+    }
+  }
+
+  
 }

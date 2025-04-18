@@ -1,8 +1,15 @@
 :host {
   display: block;
+
+  p {
+    margin: 8px 0 0;
+  }
 }
 
 .booking-image {
-  height: 5rem;
+  height: 12rem;
   width: 100%;
+  background-size: contain; /* Сжать картинку, сохраняя пропорции */
+  background-repeat: no-repeat; /* Убрать повтор картинки */
+  background-position: center; /* Расположить картинку по центру */
 }
