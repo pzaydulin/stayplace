@@ -1,0 +1,7 @@
+<ol class="room-props-list flex flex-row gap-2 mt-2 border-r-0" *ngIf="room()">
+  <li>{{ room().guests | roomNameFromNumber: RoomType.Guest }}</li>
+  <li>{{ room().bedrooms | roomNameFromNumber: RoomType.Bedroom }}</li>
+  <li>{{ room().beds | roomNameFromNumber: RoomType.Bed }}</li>
+  <li>{{ room().bathrooms | roomNameFromNumber: RoomType.Bathroom }}</li>
+</ol>
+

@@ -1,0 +1,22 @@
+.room-props-list {
+  list-style: none; /* Убираем стандартные маркеры */
+  padding: 0;
+  margin: 0;
+  left: -10px;
+  position: relative;
+}
+
+.room-props-list li {
+  position: relative;
+  padding-left: 10px; /* Отступ для точки */
+  @apply text-muted_foreground
+}
+
+.room-props-list li:not(:first-child)::before {
+  content: "•"; /* Символ точки */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Центрируем точку по вертикали */
+  font-size: 12px; /* Размер точки */
+}

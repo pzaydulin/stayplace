@@ -38,8 +38,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     bedrooms: 1,
     bathrooms: 1,
     price: 2750,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -67,8 +72,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     bedrooms: 2,
     bathrooms: 1,
     price: 5400,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -96,8 +106,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     bedrooms: 1,
     bathrooms: 1,
     price: 1800,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space<h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -122,8 +137,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     bedrooms: 2,
     bathrooms: 1,
     price: 3800,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,

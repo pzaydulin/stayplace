@@ -6,10 +6,18 @@ import { RoomHeaderComponent } from "./components/room-header/room-header.compon
 import { RoomDetailsComponent } from "./components/room-details/room-details.component";
 import { CardModule } from 'primeng/card';
 import { RoomPhotoComponent } from "./components/room-photo/room-photo.component";
+import { RoomInfoComponent } from "./components/room-info/room-info.component";
 
 @Component({
   selector: 'app-room-page',
-  imports: [CommonModule, CardModule, RoomHeaderComponent, RoomDetailsComponent, RoomPhotoComponent],
+  imports: [
+    CommonModule, 
+    CardModule, 
+    RoomHeaderComponent, 
+    RoomDetailsComponent, 
+    RoomPhotoComponent, 
+    RoomInfoComponent
+  ],
   templateUrl: './room.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

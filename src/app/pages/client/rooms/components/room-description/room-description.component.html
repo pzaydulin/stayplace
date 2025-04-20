@@ -1,0 +1,14 @@
+@if(room()) {
+    <div [innerHTML]="isExpanded ? room().description : (room().description | slice:0:350) + '...'">
+    </div>
+    <div class="mt-4 text-muted_foreground">
+        <span class="hover:cursor-pointer" (click)="isExpanded = !isExpanded">
+        @if(isExpanded) {
+            <i class="pi pi-angle-up"></i> Show less 
+        } @else {
+            <i class="pi pi-angle-down"></i> Show more
+        }
+        </span>
+    </div>
+}
+
