@@ -9,7 +9,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 1,
     bedrooms: 1,
     bathrooms: 1,
-    price: 2500,
+    price: 250,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -37,7 +37,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 1,
     bathrooms: 1,
-    price: 2750,
+    price: 275,
     description: `
       <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
       <h3>The space</h3>
@@ -71,7 +71,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 2,
     bathrooms: 1,
-    price: 5400,
+    price: 540,
     description: `
       <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
       <h3>The space</h3>
@@ -105,7 +105,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 1,
     bedrooms: 1,
     bathrooms: 1,
-    price: 1800,
+    price: 180,
     description: `
       <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
       <h3>The space<h3>
@@ -136,7 +136,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 2,
     bathrooms: 1,
-    price: 3800,
+    price: 380,
     description: `
       <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
       <h3>The space</h3>
@@ -167,7 +167,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 2,
     bathrooms: 2,
-    price: 6800,
+    price: 680,
     description:
       'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
     amenities: [
@@ -193,7 +193,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 1,
     bathrooms: 1,
-    price: 2200,
+    price: 220,
     description:
       'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
     amenities: [
@@ -219,7 +219,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 3,
     bedrooms: 3,
     bathrooms: 2,
-    price: 6800,
+    price: 680,
     description:
       'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
     amenities: [

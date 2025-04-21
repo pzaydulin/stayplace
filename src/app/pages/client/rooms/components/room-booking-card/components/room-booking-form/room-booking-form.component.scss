@@ -1,0 +1,12 @@
+:host{
+    ::ng-deep {
+        &.p-datepicker-input {
+            height: 54px;
+            padding-top: 20px;
+            border-radius: 0;
+        }
+        &.p-inputwrapper {
+            @apply rounded-none rounded-b-[10px];
+        }
+    }
+}

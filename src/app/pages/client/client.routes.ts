@@ -8,9 +8,14 @@ export const routes: Routes = [
       import('./booking/booking.component').then((c) => c.BookingComponent),
   },
   {
-    path: 'room/:id',
+    path: 'rooms/:id',
     loadComponent: () =>
       import('./rooms/room.component').then((c) => c.RoomComponent),
+    data: {
+      title: 'Example Page',
+      requiresLogin: true,
+    },
+
   },
   {
     path: 'test-map',

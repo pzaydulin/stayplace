@@ -1,0 +1,25 @@
+<ng-container 
+  *ngIf="isMobileScreen(); then tplMobile; else tplDesktop"
+  ></ng-container>
+
+<ng-template #tplDesktop>
+<div class="sticky top-4 bg-card p-4 mt-6 rounded-lg shadow-md">
+    <div class="flex flex-row items-end gap-2 mb-4">
+        <span class="text-2xl font-bold">{{ room().price | currency: 'USD':'symbol':'1.0-0' }}</span>
+        <span class="text-sm">night</span>
+    </div>
+    <app-room-booking-form [room]="room()" [isMobileScreen]="false"></app-room-booking-form>
+</div>
+</ng-template>
+
+<ng-template #tplMobile>
+    <div class="flex justify-between items-center mb-0 bg-card p-3 rounded-lg ">
+        <div class="flex flex-col text-xl gap-1 pl-2">
+            <span>Add dates for price</span>
+            <span class="text-primary text-xs"><i class="pi pi-star text-xs"></i> 4.99</span>
+        </div>
+        <div>
+            <app-room-booking-form [room]="room()" [isMobileScreen]="true"></app-room-booking-form>
+        </div>
+    </div>
+</ng-template>

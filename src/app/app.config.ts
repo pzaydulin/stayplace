@@ -12,6 +12,7 @@ import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 import { RouterSerializer } from '@app/store/router.serializer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideHttpClient, withJsonpSupport } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -44,5 +45,6 @@ export const appConfig: ApplicationConfig = {
       connectInZone: true, // If set to true, the connection is established within the Angular zone
     }),
     provideHttpClient(withJsonpSupport()),
+    provideAnimations(),
   ],
 };

@@ -25,6 +25,7 @@ export const routes: Routes = [
       provideEffects(PersonEffects),
       provideState(bookingFeature),
     ],
+    title: 'StayPlace | Booking'
   },
   {
     path: '',

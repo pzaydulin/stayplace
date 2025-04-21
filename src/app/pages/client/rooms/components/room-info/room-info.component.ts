@@ -5,19 +5,25 @@ import { RoomPropsComponent } from '../room-props/room-props.component';
 import { RoomFeaturesComponent } from "../room-features/room-features.component";
 import { RoomDescriptionComponent } from '../room-description/room-description.component';
 import { DividerModule } from 'primeng/divider';
+import { RoomBookingCardComponent } from "../room-booking-card/room-booking-card.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-room-info',
   imports: [
-    RoomPersonComponent, 
-    RoomPropsComponent, 
+    CommonModule,
+    RoomPersonComponent,
+    RoomPropsComponent,
     RoomFeaturesComponent,
     RoomDescriptionComponent,
     DividerModule,
-  ],
+    RoomBookingCardComponent
+],
   templateUrl: './room-info.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RoomInfoComponent {
-  readonly room = input.required<RoomExtended>();
+  room = input.required<RoomExtended>();
+  isMobileScreen = input<boolean>(false);
+  
 }

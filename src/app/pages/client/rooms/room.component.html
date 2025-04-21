@@ -2,7 +2,7 @@
     <p-card>
         <app-room-header [room]="room"></app-room-header>
         <app-room-details  [room]="room"></app-room-details>
-        <app-room-photo [photos]="room.photos"></app-room-photo>
-        <app-room-info [room]="room"></app-room-info>
+        <app-room-photo [photos]="room.photos" [isMobileScreen]="isMobileScreen()"></app-room-photo>
+        <app-room-info [room]="room" [isMobileScreen]="isMobileScreen()"></app-room-info>
     </p-card>
 </ng-container>

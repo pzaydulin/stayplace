@@ -1,0 +1,38 @@
+<ng-container 
+  *ngIf="isMobileScreen(); then tplMobile; else tplDesktop"
+  ></ng-container>
+
+<ng-template #tplDesktop>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div [formGroupName]="BookingField.Period" class="flex flex-row">
+    <p-iftalabel> 
+        <p-datepicker placeholder="Add date" 
+        inputId="date" showIcon iconDisplay="input"   
+        [inputStyle]="{borderTopLeftRadius: '10px'}"
+        [minDate]="minDate" [maxDate]="maxDate"
+        [formControlName]="BookingField.PeriodStart"
+        />
+        <label for="date">CHECK-IN</label>
+    </p-iftalabel>
+    <p-iftalabel>
+        <p-datepicker placeholder="Add date"  inputId="date" showIcon iconDisplay="input"  
+        [inputStyle]="{borderTopRightRadius: '10px'}"
+        [minDate]="minDate" [maxDate]="maxDate"
+        [formControlName]="BookingField.PeriodEnd"
+        />
+        
+        <label for="date">CHECKOUT</label>
+    </p-iftalabel>  
+</div>
+<p-iftalabel>
+    <p-select [formControlName]="BookingField.Guests" inputId="dd-city" [options]="guests"
+    styleClass="w-full" />
+    <label for="dd-city">GUESTS</label>
+</p-iftalabel>
+<p-button styleClass="w-full !mt-4 disabled:cursor-not-allowed disabled:bg-secondary" label="Reserve" [disabled]="!form.valid" type="submit" />
+</form>
+</ng-template>  
+
+<ng-template #tplMobile>
+    <p-button styleClass="w-full" size="large" label="Check availability" />
+</ng-template>

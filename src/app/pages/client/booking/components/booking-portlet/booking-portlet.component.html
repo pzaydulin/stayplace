@@ -28,6 +28,7 @@
         <p-button
           label="More"
           severity="secondary"
+          [routerLink]="NavigationPath.RoomPage | navPath: { id: bookingVariant.firstRoom?.id }"
         />
       </div>
     </div>

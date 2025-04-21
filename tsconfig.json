@@ -25,6 +25,7 @@
       "@app/shared/components/*": ["src/app/shared/components/*"],
       "@app/pages/client/*": ["src/app/pages/client/*"],
       "@app/pages/admin/*": ["src/app/pages/admin/*"],
+      "@app/shared/pipes/*": ["src/app/shared/pipes/*"],
     },
     "typeRoots": ["node_modules/@types"]
   },
