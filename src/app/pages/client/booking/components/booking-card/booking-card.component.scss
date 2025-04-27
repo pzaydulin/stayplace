@@ -1,4 +1,15 @@
 :host {
-  display: block;
-  max-width: 20rem;
+  @apply text-gray-700 block max-w-96 hover:cursor-pointer;
+
+  & p {
+    @apply text-base m-0 font-normal
+  }
+
+  & h2 {
+    @apply text-lg/6 font-semibold m-0
+  }
+
+  & h3 {
+    @apply text-lg/7 font-normal text-gray-500 m-0
+  }
 }

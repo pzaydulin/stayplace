@@ -14,6 +14,8 @@ export class RoomDescriptionComponent {
 
   isExpanded: boolean = false;
 
+  // prevent XSS attacks by sanitizing HTML content
+  
   // htmlContent: SafeHtml;
 
   // constructor(private sanitizer: DomSanitizer) {

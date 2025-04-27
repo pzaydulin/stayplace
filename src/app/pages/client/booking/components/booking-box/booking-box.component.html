@@ -1,8 +1,16 @@
-<div *ngIf="bookingVariant$ | async as bookingVariant" (click)="onClick(bookingVariant)">
+<div class="pb-4" *ngIf="bookingVariant$ | async as bookingVariant" (click)="onClick(bookingVariant)">
   <div
     class="booking-image"
     [ngStyle]="bookingVariant | bookingVariantFirstImage | backgroundImage"
   ></div>
-  <p>Address: {{ bookingVariant.address }}</p>
-  <p>Price: {{ bookingVariant.firstRoom?.price | currency }}</p>
+  <section class="flex justify-between items-start gap-2 p-3 pb-0">
+    <div>
+      <h2>Apartment in {{ bookingVariant.city }}</h2>
+      <h3 class="text-2xl font-bold">{{ bookingVariant.name }}</h3>
+      <p><strong>{{ bookingVariant.firstRoom?.price | currency:'USD':'symbol':'1.0' }}</strong> per night</p>
+    </div>
+    <div class="pt-0">
+        <p><i class="pi pi-star-fill text-primary"></i> 4.99</p>
+    </div>
+  </section>
 </div>

@@ -1,15 +1,23 @@
 :host {
-  display: block;
+  @apply text-gray-900;
 
-  p {
-    margin: 8px 0 0;
+  & p {
+    @apply text-sm/5 m-0 font-normal
+  }
+
+  & h2 {
+    @apply text-base/5 font-semibold m-0
+  }
+
+  & h3 {
+    @apply text-base/5 font-normal text-gray-500 m-0
   }
 }
 
 .booking-image {
   height: 12rem;
   width: 100%;
-  background-size: contain; /* Сжать картинку, сохраняя пропорции */
+  background-size: cover; /* Сжать картинку, сохраняя пропорции */
   background-repeat: no-repeat; /* Убрать повтор картинки */
   background-position: center; /* Расположить картинку по центру */
 }

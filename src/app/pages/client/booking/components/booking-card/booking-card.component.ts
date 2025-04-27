@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, linkedSignal, signal } from '@angular/core';
 import { BookingVariant } from '@app/models/booking.interface';
-import { Observable } from 'rxjs';
 import { BookingService } from '../../data-access/booking.service';
 import { CommonModule } from '@angular/common';
 import { BookingVariantImagesPipe } from "../../pipes/booking-variant-images.pipe";
 import { GalleriaModule } from 'primeng/galleria';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-booking-card',
@@ -13,21 +13,42 @@ import { GalleriaModule } from 'primeng/galleria';
   styleUrl: './booking-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BookingCardComponent implements OnInit {
-  bookingVariant$!: Observable<BookingVariant>;
+export class BookingCardComponent {
+  private readonly bookingService: BookingService = inject(BookingService);
+  protected bookingVariant = toSignal(this.bookingService.bookingVariant$);
 
-  constructor(private readonly bookingService: BookingService) {}
+  // сбросить index изображений удалось только таким образом
+  // linkedSignal -> effect -> setTimeout
 
-  ngOnInit(): void {
-    this.bookingVariant$ = this.bookingService.bookingVariant$;
-  }
+  imgActiveIndex = linkedSignal({
+    source: this.bookingVariant,
+    computation: () => -1
+  });
 
-  onSelected(bookingVariant: BookingVariant): void {
+  eff = effect(() => {
+    if (this.imgActiveIndex() === -1) { 
+      setTimeout(() => {
+        this.imgActiveIndex.set(0);
+      }, 0);
+    }
+  });
+
+  onSelected(bookingVariant: BookingVariant, event: Event): void {
+    const target = event.target as HTMLElement;
+
+    // тэги стрелки влево/вправо 
+    const allowedTags = new Set(['BUTTON', 'svg', 'path']);
+
+    if (allowedTags.has(target.tagName)) {
+      return;
+    }
+
     if (bookingVariant.firstRoom?.id) {
-      console.log('Booking card variant clicked:', bookingVariant?.firstRoom?.id);
-  //     this.navigationService.navigateByUrl(NavigationPath.RoomPage, { id: bookingVariant.firstRoom.id });
+      console.log(
+        'Booking card variant clicked:', bookingVariant,
+        bookingVariant?.firstRoom?.id
+      );
+      //     this.navigationService.navigateByUrl(NavigationPath.RoomPage, { id: bookingVariant.firstRoom.id });
     }
   }
-
-  
 }

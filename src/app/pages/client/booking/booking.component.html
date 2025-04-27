@@ -13,7 +13,7 @@
 
 <ng-template #tplMobile>
   <ng-container *ngIf="isMapShown; then tplMapMobile; else tplListMobile"></ng-container>
-  <div class="absolute bottom-4 m-auto z-10 right-0 left-0 justify-center flex">
+  <div class="sticky bottom-4 m-auto z-10 right-0 left-0 justify-center flex">
       <p-button styleClass="btn" *ngIf="!isMapShown" (click)="isMapShown = !isMapShown" icon="pi pi-map" [rounded]="true" severity="primary" />
       <p-button styleClass="btn" *ngIf="isMapShown" (click)="isMapShown = !isMapShown" icon="pi pi-list" [rounded]="true" severity="primary" />
   </div>

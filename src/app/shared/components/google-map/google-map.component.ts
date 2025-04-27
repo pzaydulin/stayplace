@@ -32,13 +32,22 @@ export class GoogleMapComponent implements OnInit {
     this.apiLoaded$ = this.googleMapsService.loadGoogleMapsAPI();
   }
 
+  previousMarker: MapMarkerConfig | null = null;
+
   onMarkerClick(config: MapMarkerConfig, marker: MapAdvancedMarker): void {
     console.log('Marker clicked:', config, marker);
     this.markerClicked = config;
     this.mapMarkerClicked.emit(config);
     this.infoWindow?.open(marker);
-  }
 
+    this.clearSelectedClass();
+    this.previousMarker = config;
+
+    const contentElement = config.content as HTMLElement;
+    if (contentElement) {
+      contentElement.classList.add('selected'); // Добавляем класс
+    }
+  }
 
   onMapClick(): void {
     if (this.markerClicked) {
@@ -54,9 +63,21 @@ export class GoogleMapComponent implements OnInit {
     this.markerClicked = null;
     this.infoWindow?.close();
     this.mapInfoWindowClosed.emit();
+
+    this.clearSelectedClass();
   }
 
   infoWindowOptions: google.maps.InfoWindowOptions = {
     headerDisabled: false,
+  };
+
+  clearSelectedClass(): void {
+    if (this.previousMarker) {
+      const previousContent = this.previousMarker.content;
+      if (previousContent) {
+        const previousElement = previousContent as HTMLElement;
+        previousElement.classList.remove('selected'); // Убираем класс с предыдущего элемента
+      }
+    }
   }
 }

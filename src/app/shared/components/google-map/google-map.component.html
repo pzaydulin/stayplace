@@ -1,4 +1,4 @@
-<google-map class="google-map" [options]="options" *ngIf="apiLoaded$ | async" (gmpClick)="onMapClick()">
+<google-map class="google-map" [options]="options" *ngIf="apiLoaded$ | async" (mapClick)="onMapClick()">
   <map-advanced-marker
     #markerElem="mapAdvancedMarker"
     *ngFor="let marker of markers"
