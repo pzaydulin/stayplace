@@ -1,6 +1,6 @@
 <div *ngIf="bookingVariant() as bookingVariant" class="mb-3">
   <p-card>
-    <div class="grid grid-flow-col grid-rows-3 gap-4 ">
+    <div class="grid grid-cols-[minmax(130px,210px),1fr] grid-rows-3 gap-4 ">
       <div class="row-span-3">
         <div>
           <p-galleria
@@ -8,7 +8,7 @@
             [circular]="true"
             [showItemNavigators]="true"
             [showThumbnails]="false"
-            [containerStyle]="{ 'max-width': '210px', 'min-width': '80px' }"
+            [containerStyle]="{ 'max-width': '210px', 'min-width': '130px' }"
           >
             <ng-template #item let-item>
               <img [src]="item" style="width: 100%; display: block" />
@@ -16,7 +16,7 @@
           </p-galleria>
         </div>
       </div>
-      <div class="col-span-2 row-span-2">
+      <div class="row-span-2">
         <div class="tt text-xl font-bold mb-3">{{ bookingVariant.name }}</div>
         <div><strong>Address</strong>: {{ bookingVariant.address }}</div>
         <div>
@@ -24,7 +24,7 @@
           {{ bookingVariant.firstRoom?.price }} USD
         </div>
       </div>
-      <div class="col-span-2 justify-self-end h-6 border-2 border-gray-400">
+      <div class="justify-self-end h-6 border-2 border-gray-400">
         <p-button
           label="More"
           severity="secondary"

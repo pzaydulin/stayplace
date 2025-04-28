@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { NavigationPath } from '@app/models/navigation.interface';
 
 @Injectable({
@@ -29,5 +29,20 @@ export class NavigationService {
     }
 
     return routeWithParams;
+  }
+
+  navigate(
+    navigationPath: (string | number)[],
+    extras?: NavigationExtras
+  ): Promise<boolean> {
+    return this.router.navigate(navigationPath, extras);
+  }
+
+  navigateByUrl(
+    navigationPath: NavigationPath,
+    params?: Record<string, any>,
+    extras?: NavigationExtras
+  ): Promise<boolean> {
+    return this.navigate(this.getRoute(navigationPath, params), extras);
   }
 }

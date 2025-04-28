@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { BookingVariant } from '@app/models/booking.interface';
 import { BookingService } from '../../data-access/booking.service';
 import { CommonModule } from '@angular/common';
+import { NavigationService } from '@app/data-access/navigation.service';
+import { NavigationPath } from '@app/models/navigation.interface';
 
 @Component({
   selector: 'app-booking-box',
@@ -17,7 +19,7 @@ export class BookingBoxComponent implements OnInit {
   bookingVariant$!: Observable<BookingVariant>;
 
   private readonly bookingService: BookingService = inject(BookingService);
-  // private readonly navigationService: NavigationService = inject(NavigationService);
+  private readonly navigationService: NavigationService = inject(NavigationService);
 
   ngOnInit(): void {
     this.bookingVariant$ = this.bookingService.bookingVariant$;
@@ -26,9 +28,9 @@ export class BookingBoxComponent implements OnInit {
   onClick(bookingVariant: BookingVariant): void {
     if (bookingVariant.firstRoom?.id) {
       console.log('Booking variant clicked:', bookingVariant.firstRoom.id);
-      // void this.navigationService.navigate(NavigationPath.RoomPage, {
-      //   id: bookingVariant.firstRoom?.id,
-      // });
+      void this.navigationService.navigateByUrl(NavigationPath.RoomPage, {
+        id: bookingVariant.firstRoom?.id,
+      });
     }
   }
 }
