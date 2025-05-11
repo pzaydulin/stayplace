@@ -83,12 +83,11 @@
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
-          "builder": "@angular-builders/jest:run",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "jestConfig": "jest.config.js",
             "tsConfig": "tsconfig.spec.json",
-            "setupFile": "src/test-setup.ts",
+            "karmaConfig": "karma.conf.js",
+            "polyfills": ["zone.js", "zone.js/testing"],
             "inlineStyleLanguage": "scss",
             "assets": [
               {

@@ -37,7 +37,6 @@ export interface PersonEntity {
   personBuildingAddError: Record<string, any> | null;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Person extends PersonEntity {}
 
 export enum PersonField {

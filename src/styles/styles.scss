@@ -31,7 +31,7 @@
   --ring: 160.1 84.1% 39.4%;
   --radius: 0.5rem;
   --p-galleria-nav-button-background: rgba(0, 0, 0, 0.1);
-  --p-galleria-nav-button-hover-background: rgba(0, 0, 0, 0.2);  
+  --p-galleria-nav-button-hover-background: rgba(0, 0, 0, 0.2);
 }
 .dark-mode {
   --background: 160.1 50% 10%;
@@ -69,26 +69,19 @@ body {
   height: 100%;
 }
 
-html, :host {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    -moz-tab-size: 4;
-    tab-size: 4;
-    font-family: ui-sans-serif,
-      system-ui,
-      sans-serif,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-      "Noto Color Emoji";
-    font-feature-settings: normal;
-    font-variation-settings: normal;
-    -webkit-tap-highlight-color: transparent;
+html,
+:host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @layer reset {
   /* here you can override the default primeng styles */
-
-
-
 }

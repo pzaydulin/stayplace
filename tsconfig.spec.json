@@ -6,7 +6,7 @@
     "module": "commonjs",
     "target": "es2017",
     "outDir": "./out-tsc/spec",
-    "types": ["jest"]
+    "types": ["jasmine", "node"],
   },
   "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }

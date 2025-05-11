@@ -124,7 +124,6 @@ export interface RoomEntity {
   roomChangeError: Record<string, any> | null;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Room extends RoomEntity {}
 
 export enum RoomField {

@@ -13,7 +13,7 @@ import { filter, map } from 'rxjs/operators';
  * a service that connects RoomFacade and BuildingFacade and uses  
  * to get an up-to-date list of variants.
  */
-export function getFirstRoomOnBuilding(building: Building, rooms: Room[]): Room | null {
+function getFirstRoomOnBuilding(building: Building, rooms: Room[]): Room | null {
   const firstRoomId = building.rooms.length ? building.rooms[0] : null;
 
   return firstRoomId ? rooms.find((room) => room.id === firstRoomId) ?? null : null;
@@ -26,11 +26,17 @@ function createNodeFromString(content: string): Node {
   return priceTag;
 }
 
+const currencyFormat = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0
+})
+
 /**
 * This function casts booking variants to map marker configs
 * It filters out booking variants without rooms and maps them to the required format
 */
-export function castMapMarkerConfigs(bookingVariants: BookingVariant[]): MapMarkerConfig[] {
+function castMapMarkerConfigs(bookingVariants: BookingVariant[]): MapMarkerConfig[] {
 
   return bookingVariants
     .filter((bookingVariant) => bookingVariant.rooms.length)
@@ -40,7 +46,8 @@ export function castMapMarkerConfigs(bookingVariants: BookingVariant[]): MapMark
         lng: bookingVariant.lng,
       },
       content: createNodeFromString(
-        bookingVariant.firstRoom?.price.toString() ?? ''
+        currencyFormat
+          .format((bookingVariant.firstRoom?.price ?? 0) * 5)          
       ),
       data: bookingVariant,
     }));
@@ -58,7 +65,7 @@ export class BookingService {
   private readonly buildingFacade: BuildingFacade = inject(BuildingFacade);
   private readonly roomFacade: RoomFacade = inject(RoomFacade);
   private readonly bookingFacade: BookingFacade = inject(BookingFacade);
-  
+
   bookingVariant$: Observable<BookingVariant> =
     this.bookingFacade.bookingVariant$.pipe(filter<any>(Boolean));
 

@@ -28,7 +28,6 @@ import { NavPathPipe } from '@app/shared/pipes/nav-path.pipe';
 export class BookingPortletComponent {
   public bookingVariant = input.required<BookingVariant>();
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   NavigationPath = NavigationPath;
 
   private readonly navigationService: NavigationService = inject(NavigationService);

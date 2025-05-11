@@ -5,8 +5,8 @@
 <ng-template #tplDesktop>
 <div class="sticky top-4 bg-card p-4 mt-6 rounded-lg shadow-md">
     <div class="flex flex-row items-end gap-2 mb-4">
-        <span class="text-2xl font-bold">{{ room().price | currency: 'USD':'symbol':'1.0-0' }}</span>
-        <span class="text-sm">night</span>
+        <span class="text-2xl font-bold">{{ room().price * 5 | currency: 'USD':'symbol':'1.0-0' }}</span>
+        <span class="text-sm">for 5 nights</span>
     </div>
     <app-room-booking-form [room]="room()" [isMobileScreen]="false"></app-room-booking-form>
 </div>

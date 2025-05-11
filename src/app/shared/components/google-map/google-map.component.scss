@@ -51,7 +51,7 @@
 
 /* HTML marker styles */
 ::ng-deep .price-tag {
-  @apply before:content-['$'] bg-white text-gray-600 border border-solid rounded-full shadow-md text-xl font-bold px-2;
+  @apply bg-white text-gray-600 border border-solid rounded-full shadow-md text-xl font-bold px-2;
 
   &:hover {
     @apply scale-110;

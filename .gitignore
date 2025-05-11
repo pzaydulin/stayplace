@@ -42,5 +42,6 @@ testem.log
 Thumbs.db
 
 .early.coverage
+.early.json
 
 /src/environments/environment.development.ts

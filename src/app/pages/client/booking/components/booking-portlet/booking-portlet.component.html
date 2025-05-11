@@ -18,10 +18,12 @@
       </div>
       <div class="row-span-2">
         <div class="tt text-xl font-bold mb-3">{{ bookingVariant.name }}</div>
-        <div><strong>Address</strong>: {{ bookingVariant.address }}</div>
+        <div>{{ bookingVariant.address }}</div>
         <div>
-          <strong>Price per night</strong>:
-          {{ bookingVariant.firstRoom?.price }} USD
+          <strong>
+          {{ (bookingVariant.firstRoom?.price ?? 0)* 5 | currency: 'USD':'symbol':'1.0-0' }}
+          </strong>
+          for 5 nights
         </div>
       </div>
       <div class="justify-self-end h-6 border-2 border-gray-400">

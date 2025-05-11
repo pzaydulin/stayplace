@@ -17,9 +17,4 @@ export class RoomHeaderComponent {
   readonly room = input.required<RoomExtended>();
   NavigationPath = NavigationPath;
   
-  // private readonly navigationService: NavigationService;
-
-  onBack(): void {
-    // void this.navigationService.navigateByUrl(NavigationPath.Home);
-  }
 }

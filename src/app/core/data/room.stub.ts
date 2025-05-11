@@ -1,6 +1,5 @@
 import { RoomAmenities, RoomDto } from '@app/models/room.interface';
 
-/* eslint-disable max-len */
 export const ROOMS_DTO_STUB: RoomDto[] = [
   {
     id: 1,
@@ -17,15 +16,20 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Hangers,
       RoomAmenities.Tv,
     ],
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     photos: [
-      '/images/rooms/photo-22.jpg',
-      '/images/rooms/photo-23.jpg',
-      '/images/rooms/photo-24.jpg',
-      '/images/rooms/photo-10.jpg',
-      '/images/rooms/photo-11.jpg',
-      '/images/rooms/photo-12.jpg',
+      '/images/rooms/apartments-1/p1.jpg',
+      '/images/rooms/apartments-1/p2.jpg',
+      '/images/rooms/apartments-1/p3.jpg',
+      '/images/rooms/apartments-1/p4.jpg',
+      '/images/rooms/apartments-1/p5.jpg',
+      '/images/rooms/apartments-1/p6.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -54,12 +58,11 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.HairDryer,
     ],
     photos: [
-      '/images/rooms/photo-3.jpg',
-      '/images/rooms/photo-1.jpg',
-      '/images/rooms/photo-22.jpg',
-      '/images/rooms/photo-13.jpg',
-      '/images/rooms/photo-14.jpg',
-      '/images/rooms/photo-15.jpg',
+      '/images/rooms/house-1/p1.jpg',
+      '/images/rooms/house-1/p2.jpg',
+      '/images/rooms/house-1/p3.jpg',
+      '/images/rooms/house-1/p4.jpg',
+      '/images/rooms/p5.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -71,7 +74,7 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 2,
     bathrooms: 1,
-    price: 540,
+    price: 240,
     description: `
       <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
       <h3>The space</h3>
@@ -88,12 +91,11 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Kitchen,
     ],
     photos: [
-      '/images/rooms/photo-4.jpg',
-      '/images/rooms/photo-5.jpg',
-      '/images/rooms/photo-6.jpg',
-      '/images/rooms/photo-16.jpg',
-      '/images/rooms/photo-17.jpg',
-      '/images/rooms/photo-18.jpg',
+      '/images/rooms/house-2/p1.jpg',
+      '/images/rooms/house-2/p2.jpg',
+      '/images/rooms/house-2/p3.jpg',
+      '/images/rooms/house-2/p4.jpg',
+      '/images/rooms/house-2/p5.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -105,10 +107,10 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 1,
     bedrooms: 1,
     bathrooms: 1,
-    price: 180,
+    price: 345,
     description: `
       <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
-      <h3>The space<h3>
+      <h3>The space</h3>
       <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
       <h3>Guest access</h3>
       <p>The main house</p>
@@ -122,9 +124,11 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Kitchen,
     ],
     photos: [
-      '/images/rooms/photo-7.jpg',
-      '/images/rooms/photo-8.jpg',
-      '/images/rooms/photo-9.jpg',
+      '/images/rooms/lake-2/p1.jpg',
+      '/images/rooms/lake-2/p2.jpg',
+      '/images/rooms/lake-2/p3.jpg',
+      '/images/rooms/lake-2/p4.jpg',
+      '/images/rooms/lake-2/p5.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -153,9 +157,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Kitchen,
     ],
     photos: [
-      '/images/rooms/photo-10.jpg',
-      '/images/rooms/photo-11.jpg',
-      '/images/rooms/photo-12.jpg',
+      '/images/rooms/lake-1/p1.jpg',
+      '/images/rooms/lake-1/p2.jpg',
+      '/images/rooms/lake-1/p3.jpg',
+      '/images/rooms/lake-1/p4.jpg',
+      '/images/rooms/lake-1/p5.jpg',
+      '/images/rooms/lake-1/p6.jpg',
+      '/images/rooms/lake-1/p7.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -167,9 +175,14 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     beds: 2,
     bedrooms: 2,
     bathrooms: 2,
-    price: 680,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    price: 320,
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -179,9 +192,11 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Kitchen,
     ],
     photos: [
-      '/images/rooms/photo-13.jpg',
-      '/images/rooms/photo-14.jpg',
-      '/images/rooms/photo-15.jpg',
+      '/images/rooms/p1.jpg',
+      '/images/rooms/p2.jpg',
+      '/images/rooms/p3.jpg',
+      '/images/rooms/p4.jpg',
+      '/images/rooms/p6.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -194,8 +209,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     bedrooms: 1,
     bathrooms: 1,
     price: 220,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -205,9 +225,11 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Kitchen,
     ],
     photos: [
-      '/images/rooms/photo-16.jpg',
-      '/images/rooms/photo-17.jpg',
-      '/images/rooms/photo-18.jpg',
+      '/images/rooms/p5.jpg',
+      '/images/rooms/p6.jpg',
+      '/images/rooms/p7.jpg',
+      '/images/rooms/p8.jpg',
+      '/images/rooms/p9.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
@@ -220,8 +242,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
     bedrooms: 3,
     bathrooms: 2,
     price: 680,
-    description:
-      'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный парк, жд вокзал, метро, площадь Ленина.',
+    description: `
+      <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+      <h3>The space</h3>
+      <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+      <h3>Guest access</h3>
+      <p>The main house</p>
+      `,
     amenities: [
       RoomAmenities.AirConditioning,
       RoomAmenities.Elevator,
@@ -231,12 +258,13 @@ export const ROOMS_DTO_STUB: RoomDto[] = [
       RoomAmenities.Kitchen,
     ],
     photos: [
-      '/images/rooms/photo-19.jpg',
-      '/images/rooms/photo-20.jpg',
-      '/images/rooms/photo-21.jpg',
+      '/images/rooms/p10.jpg',
+      '/images/rooms/p9.jpg',
+      '/images/rooms/p5.jpg',
+      '/images/rooms/p11.jpg',
+      '/images/rooms/p12.jpg',
     ],
     created: '2024-05-11T01:14:42.988Z',
     updated: '2024-05-11T01:14:44.000Z',
   },
 ];
-/* eslint-enable max-len */

@@ -35,7 +35,6 @@ export interface BuildingEntity {
   buildingRoomAddError: Record<string, any> | null;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Building extends BuildingEntity {}
 
 export enum BuildingField {

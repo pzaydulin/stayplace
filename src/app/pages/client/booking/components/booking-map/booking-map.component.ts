@@ -16,8 +16,8 @@ import { BookingService } from '@app/pages/client/booking/data-access/booking.se
 export class BookingMapComponent {
   options: google.maps.MapOptions = {
     center: {
-      lat: 59.93839227045331,
-      lng: 30.360033589998572,
+      lat: 47.616660,
+      lng: -122.058448,
     },
     zoom: 14,
     mapId: 'DEMO_MAP_ID',

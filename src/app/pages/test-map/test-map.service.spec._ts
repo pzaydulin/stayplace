@@ -1,0 +1,95 @@
+import { GoogleMapsService } from './test-map.service';
+
+describe('GoogleMapsService.loadGoogleMapsAPI()', () => {
+  let service: GoogleMapsService;
+  let mockDocument: any;
+  let mockScript: any;
+  let originalWindow: any;
+
+  beforeEach(() => {
+    originalWindow = { ...window };
+
+    mockScript = {
+      src: '',
+      async: false,
+      defer: false,
+      onerror: null,
+    };
+
+    mockDocument = {
+      createElement: jasmine
+        .createSpy('createElement')
+        .and.callFake((tag: string) => {
+          return tag === 'script' ? mockScript : {};
+        }),
+      head: {
+        appendChild: jasmine.createSpy('appendChild'),
+      },
+    };
+
+    spyOn(document, 'createElement').and.callFake(mockDocument.createElement);
+    spyOn(document.head, 'appendChild').and.callFake(
+      mockDocument.head.appendChild
+    );
+
+    spyOnProperty(window, 'initMap', 'set').and.callFake(() => mockScript);
+
+    service = new GoogleMapsService();
+  });
+
+  afterEach(() => {
+    for (const key in window) {
+      if (!(key in originalWindow)) {
+        delete (window as any)[key];
+      }
+    }
+    for (const key in originalWindow) {
+      (window as any)[key] = originalWindow[key];
+    }
+  });
+
+  it('should load Google Maps API script and emit true on successful load', (done) => {
+    let result: boolean | undefined;
+
+    service.loadGoogleMapsAPI().subscribe((val) => {
+      result = val;
+      expect(result).toBeTrue();
+      expect(mockDocument.createElement).toHaveBeenCalledWith('script');
+      expect(mockDocument.head.appendChild).toHaveBeenCalledWith(mockScript);
+      expect(mockScript.src).toContain(
+        'https://maps.googleapis.com/maps/api/js?key=FAKE_KEY'
+      );
+      expect(mockScript.async).toBeTrue();
+      expect(mockScript.defer).toBeTrue();
+      done();
+    });
+
+    (window as any).initMap();
+  });
+
+  it('should return true immediately if already loaded', (done) => {
+    (service as any).loaded = true;
+
+    service.loadGoogleMapsAPI().subscribe((val) => {
+      expect(val).toBeTrue();
+      expect(mockDocument.createElement).not.toHaveBeenCalled();
+      expect(mockDocument.head.appendChild).not.toHaveBeenCalled();
+      done();
+    });
+  });
+
+  it('should emit false if script loading fails', (done) => {
+    let result: boolean | undefined;
+
+    service.loadGoogleMapsAPI().subscribe({
+      next: (val) => (result = val),
+      complete: () => {
+        expect(result).toBeFalse();
+        done();
+      },
+    });
+
+    const errorObj = { message: 'Script failed' };
+    mockScript.onerror!(errorObj);
+  });
+});
