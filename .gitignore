@@ -45,3 +45,5 @@ Thumbs.db
 .early.json
 
 /src/environments/environment.development.ts
+
+.browserslistrc
