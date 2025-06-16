@@ -8,10 +8,7 @@ export const ROOM_DTO_STUB: RoomDto = {
   beds: 1,
   bedrooms: 1,
   bathrooms: 1,
-  price: 2500,
-  description:
-    'Уютная квартира в самом центре города. В шаговой доступности НИИТО, стадион Спартак, центральный ' +
-    'парк, жд вокзал, метро, площадь Ленина.',
+  price: 250,
   amenities: [
     RoomAmenities.AirConditioning,
     RoomAmenities.Elevator,
@@ -19,9 +16,23 @@ export const ROOM_DTO_STUB: RoomDto = {
     RoomAmenities.Hangers,
     RoomAmenities.Tv,
   ],
-  photos: ['/photo.jpg'],
-  created: '2021-05-11T01:14:42.988Z',
-  updated: '2021-05-11T01:14:44.000Z',
+  description: `
+    <p>We are partnering with the owners to offer you this breathtaking waterfront property, located in one of the most highly-coveted neighborhoods on the Hood Canal. For a short time only. You don’t want to miss it!</p>
+    <h3>The space</h3>
+    <p>In this listing you are booking the main house only. Please keep in mind that the driveway, hot tub and the beach access are shared with guests from the guest cottage listing.</p>
+    <h3>Guest access</h3>
+    <p>The main house</p>
+    `,
+  photos: [
+    '/images/rooms/apartments-1/p1.jpg',
+    '/images/rooms/apartments-1/p2.jpg',
+    '/images/rooms/apartments-1/p3.jpg',
+    '/images/rooms/apartments-1/p4.jpg',
+    '/images/rooms/apartments-1/p5.jpg',
+    '/images/rooms/apartments-1/p6.jpg',
+  ],
+  created: '2024-05-11T01:14:42.988Z',
+  updated: '2024-05-11T01:14:44.000Z',
 };
 
 export const ROOM_STUB: Room = {
