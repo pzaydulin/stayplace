@@ -1,7 +1,13 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 
-import { catchError, concatMap, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+import {
+  catchError,
+  concatMap,
+  map,
+  mergeMap,
+  withLatestFrom,
+} from 'rxjs/operators';
 import { BuildingActions } from './building.actions';
 import { Store, Action } from '@ngrx/store';
 import { BuildingStorage } from '@app/storage/building.storage';
@@ -158,9 +164,7 @@ export class BuildingEffects implements OnInitEffects {
         this.store$.select(BuildingSelectors.selectBuildingsEntities)
       ),
       mergeMap(([action, buildingsEntities]) => {
-        const building = buildingsEntities
-          ? buildingsEntities[action.payload.id]
-          : null;
+        const building = buildingsEntities?.[action.payload.id] ?? null;
 
         const rooms =
           building?.rooms.filter((room) => room !== action.payload.room) ?? [];
@@ -176,8 +180,8 @@ export class BuildingEffects implements OnInitEffects {
       }),
       catchError((error) =>
         of(
-          BuildingActions.addBuildingRoomFailure({
-            payload: error || 'Error adding room',
+          BuildingActions.removeBuildingRoomFailure({
+            payload: error || 'Error removing room',
           })
         )
       )
@@ -188,7 +192,8 @@ export class BuildingEffects implements OnInitEffects {
     this.actions$.pipe(
       ofType(BuildingActions.removeBuildings),
       mergeMap((action) =>
-        of(BuildingActions.removeBuildingsSuccess({ payload: action.payload })
+        of(
+          BuildingActions.removeBuildingsSuccess({ payload: action.payload })
         ).pipe(
           catchError((error) =>
             of(BuildingActions.removeBuildingsFailure({ payload: error }))

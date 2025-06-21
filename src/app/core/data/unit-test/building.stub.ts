@@ -1,10 +1,15 @@
-import { Building, BuildingField, ChangedBuilding, NewBuilding } from '@app/models/building.interface';
+import {
+  Building,
+  BuildingField,
+  ChangedBuilding,
+  NewBuilding,
+} from '@app/models/building.interface';
 import { Entity } from '@app/models/entity.interface';
 
 export const BUILDING_STUB: Building = {
   id: 1,
   person: 1,
-  rooms: [1],
+  rooms: [1, 2],
   name: 'Modern Appartment',
   city: 'Sammamish',
   lat: 47.619912,
@@ -24,7 +29,10 @@ export const BUILDING_STUB: Building = {
 
 export const BUILDINGS_STUB: Building[] = [BUILDING_STUB];
 
-export const BUILDINGS_LOAD_ERROR = { code: 0, message: 'Failure load buildings' };
+export const BUILDINGS_LOAD_ERROR = {
+  code: 0,
+  message: 'Failure load buildings',
+};
 
 export const ENTITY_STUB: Entity = {
   id: 1,
