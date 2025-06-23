@@ -44,8 +44,8 @@ export const NEW_BUILDING_STUB: NewBuilding = {
   [BuildingField.Person]: 1,
   [BuildingField.City]: 'City',
   [BuildingField.Address]: 'New Address',
-  [BuildingField.Created]: '2020-01-02',
-  [BuildingField.Updated]: '2020-01-02',
+  [BuildingField.Created]: '2025-01-02',
+  [BuildingField.Updated]: '2025-01-02',
   [BuildingField.Lat]: 10.01,
   [BuildingField.Lng]: 20.01,
 };
@@ -56,8 +56,8 @@ export const CHANGED_BUILDING_STUB: ChangedBuilding = {
   [BuildingField.Person]: 1,
   [BuildingField.City]: 'City',
   [BuildingField.Address]: 'New Address',
-  [BuildingField.Created]: '2020-01-02',
-  [BuildingField.Updated]: '2020-01-02',
+  [BuildingField.Created]: '2025-01-02',
+  [BuildingField.Updated]: '2025-01-02',
   [BuildingField.Lat]: 10.01,
   [BuildingField.Lng]: 20.01,
 };
