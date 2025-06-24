@@ -1,8 +1,10 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["**/*.ts"],
   "compilerOptions": {
-    "sourceMap": false,
-    "types": ["cypress"]
-  }
+    "target": "es2020",
+    "lib": ["es2020", "dom"],
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "include": ["e2e/**/*.ts", "support/**/*.ts"]
 }
