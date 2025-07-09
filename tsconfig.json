@@ -1,7 +1,7 @@
 {
+  "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -17,18 +17,6 @@
     "module": "es2022",
     "moduleResolution": "node",
     "useDefineForClassFields": false,
-    "paths": {
-      "@app/models/*": ["src/app/core/models/*"],
-      "@app/store/*": ["src/app/core/store/*"],
-      "@app/storage/*": ["src/app/core/storage/*"],
-      "@app/data-access/*": ["src/app/core/data-access/*"],
-      "@app/test/stubs/*": ["src/app/core/data/unit-test/*"],
-      "@app/data/*": ["src/app/core/data/*"],
-      "@app/shared/components/*": ["src/app/shared/components/*"],
-      "@app/pages/client/*": ["src/app/pages/client/*"],
-      "@app/pages/admin/*": ["src/app/pages/admin/*"],
-      "@app/shared/pipes/*": ["src/app/shared/pipes/*"]
-    },
     "typeRoots": ["node_modules/@types"]
   },
   "angularCompilerOptions": {
