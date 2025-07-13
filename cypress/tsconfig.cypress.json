@@ -6,9 +6,5 @@
     "strict": true,
     "moduleResolution": "node"
   },
-  "include": [
-    "e2e/**/*.ts",
-    "support/**/*.ts",
-    "../src/**/*.ts" // Чтобы видеть алиасы, часто нужно включить src
-  ]
+  "include": ["e2e/**/*.ts", "support/**/*.ts"]
 }
