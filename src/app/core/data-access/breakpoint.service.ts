@@ -4,17 +4,16 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BreakpointService {
-
   private breakpointObserver: BreakpointObserver = inject(BreakpointObserver);
 
-  private breakpoint$ =  this.breakpointObserver
-        .observe([Breakpoints.HandsetPortrait])
-        .pipe(
-          map((result) => result.matches)
-        )
+  public breakpoint$ = this.breakpointObserver
+    .observe([Breakpoints.HandsetPortrait])
+    .pipe(map((result) => result.matches));
 
-  public breakpoint = toSignal(this.breakpoint$, { initialValue: false });
+  // Нельзя использовать toSignal в глобольном сервисе т.к. не отписывается автоматически
+  // и может привести к утечке памяти. toSignal это альтернатива AsyncPipe и должен использоваться в компонентах.
+  // public breakpoint = toSignal(this.breakpoint$, { initialValue: false }); // wrong usage
 }
